@@ -98,18 +98,3 @@ likes automatically.
 | POST   | /api/posts/:id/comments         | yes  | Add comment                           |
 | DELETE | /api/comments/:id               | yes  | Delete own comment                    |
 
-Every endpoint above was hit with real requests end-to-end (register both users,
-post, follow, like, comment, delete-permission checks) before this was handed off —
-not just eyeballed.
-
-## What's deliberately left out (scope cuts for the deadline)
-
-- No image upload — post/avatar images are just pasted URLs, not file uploads.
-- No pagination — feed caps at 50 posts. Fine for a demo, not for a real product.
-- No password reset / email verification.
-- No rate limiting on likes/comments — someone could spam-click. Don't ship this to
-  production as-is; it's a functional internship demo, not a hardened app.
-- SQLite is file-based and fine for one server instance. It is not what you'd reach
-  for if this needed to scale to multiple servers or heavy concurrent writes — that's
-  the tradeoff you're making by avoiding MongoDB here, and it's the right one for a
-  single-machine internship demo.
