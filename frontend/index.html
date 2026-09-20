@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feed - Mini Social</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <div class="topbar" id="topbar"></div>
+
+  <main>
+
+    <form class="composer" id="composerForm">
+
+      <textarea
+        id="composerContent"
+        placeholder="What's on your mind?"
+        maxlength="500"
+        required
+      ></textarea>
+
+      <label class="file-input-label" for="composerImage">
+        📷 Add image
+      </label>
+
+      <input
+        type="file"
+        id="composerImage"
+        accept="image/jpeg,image/png,image/gif,image/webp"
+      >
+
+      <div id="composerImageName" class="file-name"></div>
+
+      <div class="composer-row">
+        <span></span>
+
+        <button type="submit" class="btn-primary">
+          Post
+        </button>
+      </div>
+
+    </form>
+
+    <div class="feed-tabs">
+      <button id="tabAll" class="active">
+        All posts
+      </button>
+
+      <button id="tabFollowing">
+        Following
+      </button>
+    </div>
+
+    <div id="postList"></div>
+
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/posts.js"></script>
+  <script src="/js/feed.js"></script>
+
+</body>
+</html>
